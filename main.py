@@ -16,9 +16,10 @@ from pathlib import Path
 from tensorflow.keras.models import load_model
 
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "simplernn_imdb_model.keras"
+MODEL_PATH = Path(__file__).resolve().parent / "simplernn_imdb_model.keras"
 
-model = load_model(MODEL_PATH)
+
+model = load_model(MODEL_PATH, compile=False)
 
 ##Step2: Helper function 
 # function to decode review - from integers to words
